@@ -1,0 +1,3 @@
+Javascript methodaları için;
+    https://developer.mozilla.org/en-US/
+
