@@ -20,7 +20,12 @@ function StateSample() {
   //JSX yazarken eğer js kodu kullanmak istiyorsak {} scope kullanmamız gerekiyor...
   return (
     <div>
-      <input type="text" id="name" onChange={(e) => setName(e.target.value)} />
+      <input
+        type="text"
+        autoComplete="off"
+        id="name"
+        onChange={(e) => setName(e.target.value)}
+      />
       <p>{name}</p>
     </div>
   );
