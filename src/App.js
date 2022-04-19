@@ -20,8 +20,8 @@ function App() {
       {/* <User></User> */}
       {/* <FetchGetSample></FetchGetSample> */}
       {/* <FetchPostSample></FetchPostSample> */}
-      {/* <FetchPostSample2></FetchPostSample2> */}
-      <AxiosSample></AxiosSample>
+      <FetchPostSample2></FetchPostSample2>
+      {/* <AxiosSample></AxiosSample> */}
     </>
   );
 }

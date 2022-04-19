@@ -13,8 +13,8 @@ function FetchPostSample2() {
     const categoryName = "Deneme2";
     const description = document.getElementById("description").value;
     let requestBody = {
+      name: "Deneme2221",
       description: description,
-      name: categoryName,
     };
 
     let requestOptions = {
