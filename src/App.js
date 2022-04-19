@@ -9,6 +9,8 @@ import FetchGetSample from "./FetchSample/FetchGetSample";
 import FetchPostSample from "./FetchSample/FetchPostSample";
 import FetchPostSample2 from "./FetchSample/FetchPostSample2";
 import AxiosSample from "./axiosSample/AxiosSample";
+import HomePage from "./ComponentSample/HomePage";
+import ProductList from "./ExampleData/ProductList";
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
       {/* <User></User> */}
       {/* <FetchGetSample></FetchGetSample> */}
       {/* <FetchPostSample></FetchPostSample> */}
-      <FetchPostSample2></FetchPostSample2>
+      {/* <FetchPostSample2></FetchPostSample2> */}
       {/* <AxiosSample></AxiosSample> */}
+      {/* <HomePage /> */}
+      <ProductList></ProductList>
     </>
   );
 }
