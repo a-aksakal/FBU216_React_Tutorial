@@ -12,6 +12,11 @@ import AxiosSample from "./axiosSample/AxiosSample";
 import HomePage from "./ComponentSample/HomePage";
 import ProductList from "./ExampleData/ProductList";
 import { Route, Routes, Switch } from "react-router-dom";
+import Menu from "./ecommerceSample/Components/ComponentMenu";
+import Layout from "./ecommerceSample/Components/Layout";
+import Header from "./ecommerceSample/Components/Header";
+import YeniUrun from "./ecommerceSample/Screens/YeniUrun";
+
 function App() {
   return (
     <>
@@ -27,10 +32,15 @@ function App() {
       {/* <HomePage /> */}
       {/* <ProductList></ProductList> */}
       {/* Routes componentini kullanarak bütün Route componentlerini içine sarmallıyoruz. Ardından aşağıdaki şekildeki gibi componentimizi eklemiş oluyoruz. */}
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/fetch" element={<FetchPostSample2 />}></Route>
-      </Routes>
+      <div style={{ padding: 20 }}>
+        <Routes>
+          {/* <Route path="/" element={<HomePage />}></Route>
+        <Route path="/fetch" element={<FetchPostSample2 />}></Route> */}
+          <Route path="/" element={<Header />}></Route>
+          <Route path="/layout" element={<Layout />}></Route>
+          <Route path="/yeniurun" element={<YeniUrun />}></Route>
+        </Routes>
+      </div>
     </>
   );
 }
