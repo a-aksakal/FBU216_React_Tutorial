@@ -12,11 +12,13 @@ import {
   TreeSelect,
   Switch,
 } from "antd";
+import { baseManager } from "../../services/BaseManager";
 
 function YeniUrun() {
   const [componentSize, setComponentSize] = useState("default");
   const [name, setName] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [quantityPerUnit, setQuantityPerUnit] = useState("");
   const [employeeName, setEmployeeName] = useState("");
   const [price, setPrice] = useState(0);
   const [discontinued, setDiscontinued] = useState(false);
@@ -26,6 +28,23 @@ function YeniUrun() {
   };
   const changeDiscontinued = (value) => {
     setDiscontinued(value);
+  };
+
+  const AddProduct = () => {
+    let requestBody = {
+      name: name,
+      unitPrice: price,
+      discontinued: discontinued,
+      quantityPerUnit: quantityPerUnit,
+      supplier: {
+        companyName: companyName,
+        contactName: employeeName,
+      },
+    };
+
+    baseManager
+      .post("/products", requestBody)
+      .then((data) => console.log(data));
   };
 
   return (
@@ -67,7 +86,7 @@ function YeniUrun() {
             />
           </Form.Item>
           <Form.Item label="Paket Tanımı">
-            <Select>
+            <Select onChange={(e) => setQuantityPerUnit(e)}>
               <Select.Option value="16x16">16x16</Select.Option>
               <Select.Option value="32x32">32x32</Select.Option>
               <Select.Option value="64x64">64x64</Select.Option>
@@ -94,7 +113,9 @@ function YeniUrun() {
             <Switch onChange={changeDiscontinued} />
           </Form.Item>
           <Form.Item label="=>">
-            <Button type="primary">Ekle</Button>
+            <Button type="primary" onClick={() => AddProduct()}>
+              Ekle
+            </Button>
           </Form.Item>
         </Form>
       </div>
