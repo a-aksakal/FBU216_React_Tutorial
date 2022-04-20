@@ -22,10 +22,10 @@ function App() {
       {/* <User></User> */}
       {/* <FetchGetSample></FetchGetSample> */}
       {/* <FetchPostSample></FetchPostSample> */}
-      {/* <FetchPostSample2></FetchPostSample2> */}
+      <FetchPostSample2></FetchPostSample2>
       {/* <AxiosSample></AxiosSample> */}
       {/* <HomePage /> */}
-      <ProductList></ProductList>
+      {/* <ProductList></ProductList> */}
     </>
   );
 }

@@ -1,34 +1,42 @@
 import React, { useEffect, useState } from "react";
+import { baseManager } from "../services/BaseManager";
 
 function FetchPostSample2() {
   const [categories, setCategories] = useState([]);
   const [refresh, setRefresh] = useState(false);
   useEffect(() => {
-    fetch("https://northwind.vercel.app/api/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
+    // fetch("https://northwind.vercel.app/api/categories")
+    //   .then((res) => res.json())
+    //   .then((data) => setCategories(data));
+
+    baseManager.get("/categories").then((data) => {
+      setCategories(data);
+    });
     setRefresh(false);
   }, [refresh]);
   const AddData = () => {
-    const categoryName = "Deneme2";
+    const name = document.getElementById("name").value;
     const description = document.getElementById("description").value;
     let requestBody = {
-      name: "Deneme2221",
+      name: name,
       description: description,
     };
 
-    let requestOptions = {
-      header: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(requestBody),
-    };
+    baseManager.post("/categories", requestBody).then((data) => {
+      console.log(data);
+    });
+    // let requestOptions = {
+    //   header: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    //   body: JSON.stringify(requestBody),
+    // };
 
-    fetch("https://northwind.vercel.app/api/categories", requestOptions)
-      .then((res) => res.json())
-      .then((response) => console.log(response));
+    // fetch("https://northwind.vercel.app/api/categories", requestOptions)
+    //   .then((res) => res.json())
+    //   .then((response) => console.log(response));
     setRefresh(true);
   };
   return (
