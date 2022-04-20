@@ -11,6 +11,9 @@ export const baseManager = {
       .then((res) => res.json())
       .then((data) => {
         result = data;
+      })
+      .catch((err) => {
+        result = err;
       });
 
     return result;

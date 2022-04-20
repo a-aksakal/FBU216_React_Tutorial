@@ -14,7 +14,9 @@ function ProductList() {
       let newObject = {
         name: name,
       };
-      setProducts([...products, newObject]); //split operator.. Yeni bir dizi oluşturur ve ... koyarak eski dizinin elemanlarını içine yazdırabileceğimiz yöntem...
+      //setProducts([...products, newObject]);
+      setProducts([newObject, ...products]);
+      //split operator.. Yeni bir dizi oluşturur ve ... koyarak eski dizinin elemanlarını içine yazdırabileceğimiz yöntem...
       //products.push(newObject); //bu sayfayı render etmez!
     }
   };

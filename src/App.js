@@ -11,7 +11,7 @@ import FetchPostSample2 from "./FetchSample/FetchPostSample2";
 import AxiosSample from "./axiosSample/AxiosSample";
 import HomePage from "./ComponentSample/HomePage";
 import ProductList from "./ExampleData/ProductList";
-
+import { Route, Routes, Switch } from "react-router-dom";
 function App() {
   return (
     <>
@@ -22,10 +22,15 @@ function App() {
       {/* <User></User> */}
       {/* <FetchGetSample></FetchGetSample> */}
       {/* <FetchPostSample></FetchPostSample> */}
-      <FetchPostSample2></FetchPostSample2>
+      {/* <FetchPostSample2></FetchPostSample2> */}
       {/* <AxiosSample></AxiosSample> */}
       {/* <HomePage /> */}
       {/* <ProductList></ProductList> */}
+      {/* Routes componentini kullanarak bütün Route componentlerini içine sarmallıyoruz. Ardından aşağıdaki şekildeki gibi componentimizi eklemiş oluyoruz. */}
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/fetch" element={<FetchPostSample2 />}></Route>
+      </Routes>
     </>
   );
 }

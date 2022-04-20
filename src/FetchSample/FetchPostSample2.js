@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { baseManager } from "../services/BaseManager";
 
 function FetchPostSample2() {
   const [categories, setCategories] = useState([]);
   const [refresh, setRefresh] = useState(false);
+
+  const navigate = useNavigate();
   useEffect(() => {
     // fetch("https://northwind.vercel.app/api/categories")
     //   .then((res) => res.json())
@@ -14,6 +17,7 @@ function FetchPostSample2() {
     });
     setRefresh(false);
   }, [refresh]);
+
   const AddData = () => {
     const name = document.getElementById("name").value;
     const description = document.getElementById("description").value;
@@ -25,6 +29,7 @@ function FetchPostSample2() {
     baseManager.post("/categories", requestBody).then((data) => {
       console.log(data);
     });
+
     // let requestOptions = {
     //   header: {
     //     Accept: "application/json",
@@ -39,6 +44,11 @@ function FetchPostSample2() {
     //   .then((response) => console.log(response));
     setRefresh(true);
   };
+
+  //Bu functionda ise useNavigate hook'u yardımıyla yukarıda tanımlamış olduğumuz değişkeni kullanarak içine gitmek istediğimiz yolu yazıyoruz.
+  const GetHome = () => {
+    navigate("/");
+  };
   return (
     <div>
       <input type="text" id="name" />
@@ -49,6 +59,11 @@ function FetchPostSample2() {
           <li key={index}>{value.name}</li>
         ))}
       </ul>
+      {/* Link componenti sayesinde to property'sine atamış olduğumuz yolu tanıtıyoruz. Daha sonrasında buraya tıklanınca bizi istediğimiz yerer tönlendirmiş oluyor. */}
+      <button>
+        <Link to="/">Click Me!</Link>
+      </button>
+      <button onClick={() => GetHome()}>Home Page</button>
     </div>
   );
 }
