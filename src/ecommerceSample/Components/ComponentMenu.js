@@ -27,7 +27,7 @@ function ComponentMenu() {
             <Link to="/yeniurun">Yeni Ürün</Link>
           </Menu.Item>
           <Menu.Item key="disabled" icon={<UnorderedListOutlined />}>
-            Ürünleri Listele
+            <Link to="/urunlistele">Ürünleri Listele</Link>
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>

@@ -16,6 +16,9 @@ import Menu from "./ecommerceSample/Components/ComponentMenu";
 import Layout from "./ecommerceSample/Components/Layout";
 import Header from "./ecommerceSample/Components/Header";
 import YeniUrun from "./ecommerceSample/Screens/YeniUrun";
+import UrunListele from "./ecommerceSample/Screens/UrunListele";
+import HomeScreen from "./ecommerceSample/Screens/HomeScreen";
+import { CartProvider } from "./store/CartContext";
 
 function App() {
   return (
@@ -33,13 +36,14 @@ function App() {
       {/* <ProductList></ProductList> */}
       {/* Routes componentini kullanarak bütün Route componentlerini içine sarmallıyoruz. Ardından aşağıdaki şekildeki gibi componentimizi eklemiş oluyoruz. */}
       <div style={{ padding: 20 }}>
-        <Routes>
-          {/* <Route path="/" element={<HomePage />}></Route>
-        <Route path="/fetch" element={<FetchPostSample2 />}></Route> */}
-          <Route path="/" element={<Header />}></Route>
-          <Route path="/layout" element={<Layout />}></Route>
-          <Route path="/yeniurun" element={<YeniUrun />}></Route>
-        </Routes>
+        <CartProvider>
+          <Routes>
+            <Route path="/" element={<HomeScreen />}></Route>
+            <Route path="/layout" element={<Layout />}></Route>
+            <Route path="/yeniurun" element={<YeniUrun />}></Route>
+            <Route path="/urunlistele" element={<UrunListele />}></Route>
+          </Routes>
+        </CartProvider>
       </div>
     </>
   );

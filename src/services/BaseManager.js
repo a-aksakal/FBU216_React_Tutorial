@@ -56,7 +56,7 @@ export const baseManager = {
     return responseData;
   },
 
-  del: async (url, data) => {
+  del: async (url) => {
     let responseData = [];
 
     let requestOptions = {
@@ -65,7 +65,6 @@ export const baseManager = {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
     };
 
     await fetch(BASE_URL + url, requestOptions)
