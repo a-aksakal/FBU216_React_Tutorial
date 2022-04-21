@@ -19,7 +19,7 @@ function HomeScreen() {
       item.quantity = 1;
       setCart([...cart, item]);
     } else {
-      item.quantity = item.quantity + 1;
+      findedProduct.quantity = findedProduct.quantity + 1;
       setCart([...cart]);
     }
   };

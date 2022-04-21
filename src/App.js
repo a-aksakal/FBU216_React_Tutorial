@@ -19,6 +19,7 @@ import YeniUrun from "./ecommerceSample/Screens/YeniUrun";
 import UrunListele from "./ecommerceSample/Screens/UrunListele";
 import HomeScreen from "./ecommerceSample/Screens/HomeScreen";
 import { CartProvider } from "./store/CartContext";
+import CartScreen from "./ecommerceSample/Screens/CartScreen";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/layout" element={<Layout />}></Route>
             <Route path="/yeniurun" element={<YeniUrun />}></Route>
             <Route path="/urunlistele" element={<UrunListele />}></Route>
+            <Route path="/sepetim" element={<CartScreen />}></Route>
           </Routes>
         </CartProvider>
       </div>

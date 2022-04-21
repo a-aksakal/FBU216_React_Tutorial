@@ -20,11 +20,11 @@ function Header() {
       >
         <img style={{ maxHeight: 80, maxWidth: 80 }} src="/logo192.png"></img>
         <Badge count={cartlength}>
-          <a>
-            <Avatar shape="square" size="large">
+          <Avatar shape="square" size="large">
+            <Link to="/sepetim">
               <ShoppingCartOutlined style={{ color: "black", fontSize: 24 }} />
-            </Avatar>
-          </a>
+            </Link>
+          </Avatar>
         </Badge>
       </div>
       <ComponentMenu />
