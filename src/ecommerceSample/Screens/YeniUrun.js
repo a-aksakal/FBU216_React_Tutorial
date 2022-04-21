@@ -112,7 +112,7 @@ function YeniUrun() {
           <Form.Item label="Üretim Durumu" valuePropName="checked">
             <Switch onChange={changeDiscontinued} />
           </Form.Item>
-          <Form.Item label="=>">
+          <Form.Item label=":">
             <Button type="primary" onClick={() => AddProduct()}>
               Ekle
             </Button>

@@ -24,6 +24,7 @@ function EffectSample() {
   //component artık kullanılmadığında çalışacak olan kod.
   //componentdidunmount yapısı.
   useEffect(() => {
+    console.log("");
     return () => {
       console.log("sayfadan çıkış yapıldı.");
     };
