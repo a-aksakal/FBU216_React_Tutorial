@@ -7,7 +7,7 @@ import CartContext from "../../store/CartContext";
 function HomeScreen() {
   const [products, setProducts] = useState([]);
 
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, setCart, setTotal, total } = useContext(CartContext);
 
   useEffect(() => {
     baseManager.get("/products").then((data) => setProducts(data));
@@ -20,8 +20,10 @@ function HomeScreen() {
       setCart([...cart, item]);
     } else {
       findedProduct.quantity = findedProduct.quantity + 1;
+
       setCart([...cart]);
     }
+    setTotal(total + item.unitPrice);
   };
   return (
     <>

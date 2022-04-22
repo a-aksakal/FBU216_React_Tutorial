@@ -4,11 +4,12 @@ import CartContext from "../../store/CartContext";
 import Header from "../Components/Header";
 
 function CartScreen() {
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, setCart, total, setTotal } = useContext(CartContext);
   const DeleteCart = (item) => {
     var findedProduct = cart.find((x) => x.id == item.id);
     var index = cart.indexOf(findedProduct);
     cart.splice(index, 1);
+    setTotal(total - item.unitPrice * item.quantity);
     setCart([...cart]);
   };
   return (
@@ -23,6 +24,7 @@ function CartScreen() {
       >
         <div style={{ width: 50, height: 50 }}>
           <p>Total Price</p>
+          <p>{total.toFixed(2)}</p>
         </div>
       </div>
       <div
