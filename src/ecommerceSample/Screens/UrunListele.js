@@ -41,8 +41,9 @@ function UrunListele() {
 
           <Column
             title="Tedarikçi Adı"
-            dataIndex="supplier.companyName"
-            key="supplier.companyName"
+            dataIndex="supplier"
+            key="supplier"
+            render={(supplier) => <p>{supplier && supplier.companyName}</p>}
           />
           <Column
             title="Tedarikçi İlgili Kişi"

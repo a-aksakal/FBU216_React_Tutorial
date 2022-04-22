@@ -36,53 +36,58 @@ function HomeScreen() {
           marginRight: 50,
         }}
       >
-        {products.map((repo) => (
-          <div
-            style={{
-              backgroundColor: "#c1d3d4",
-              marginTop: 50,
-              display: "flex",
-              flexDirection: "column",
-              minWidth: 1000,
-              paddingLeft: 50,
-              marginLeft: 400,
-              paddingRight: 30,
-              paddingBottom: 12,
-              borderRadius: 15,
-            }}
-            span={24}
-          >
-            <p style={{ flex: 1, fontWeight: "bold", fontSize: 26 }}>
-              {repo.name}
-            </p>
-            <p style={{ fontWeight: "bold", fontSize: 14 }}></p>
-            <p style={{ fontWeight: "bold", fontSize: 14 }}>
-              {repo.quantityPerUnit}
-            </p>
+        {products &&
+          products.map((repo) => (
             <div
               style={{
+                backgroundColor: "#c1d3d4",
+                marginTop: 50,
                 display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignContent: "flex-end",
+                flexDirection: "column",
+                minWidth: 1000,
+                paddingLeft: 50,
+                marginLeft: 400,
+                paddingRight: 30,
+                paddingBottom: 12,
+                borderRadius: 15,
               }}
+              span={24}
             >
-              <p
+              <p style={{ flex: 1, fontWeight: "bold", fontSize: 26 }}>
+                {repo.name}
+              </p>
+
+              <p style={{ fontWeight: "bold", fontSize: 14 }}>
+                {repo.supplier && repo.supplier.companyName}
+              </p>
+
+              <p style={{ fontWeight: "bold", fontSize: 14 }}>
+                {repo.quantityPerUnit}
+              </p>
+              <div
                 style={{
-                  fontSize: 20,
-                  fontWeight: "800",
-                  color: "green",
-                  alignSelf: "flex-end",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignContent: "flex-end",
                 }}
               >
-                {repo.unitPrice.toFixed(2)}
-              </p>
-              <Button type="primary" onClick={() => AddCart(repo)}>
-                Sepete Ekle
-              </Button>
+                <p
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "800",
+                    color: "green",
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  {repo.unitPrice.toFixed(2)}
+                </p>
+                <Button type="primary" onClick={() => AddCart(repo)}>
+                  Sepete Ekle
+                </Button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Row>
     </>
   );
