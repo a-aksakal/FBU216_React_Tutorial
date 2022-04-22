@@ -20,6 +20,7 @@ import UrunListele from "./ecommerceSample/Screens/UrunListele";
 import HomeScreen from "./ecommerceSample/Screens/HomeScreen";
 import { CartProvider } from "./store/CartContext";
 import CartScreen from "./ecommerceSample/Screens/CartScreen";
+import Login from "./ecommerceSample/Screens/Login";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/yeniurun" element={<YeniUrun />}></Route>
             <Route path="/urunlistele" element={<UrunListele />}></Route>
             <Route path="/sepetim" element={<CartScreen />}></Route>
+            <Route path="/login" element={<Login />}></Route>
           </Routes>
         </CartProvider>
       </div>

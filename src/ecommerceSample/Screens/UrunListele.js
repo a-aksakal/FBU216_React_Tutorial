@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import Header from "../Components/Header";
 import { Table, Tag, Space } from "antd";
 import { baseManager } from "../../services/BaseManager";
+import { useNavigate } from "react-router-dom";
 
 function UrunListele() {
   const { Column } = Table;
   const [products, setProducts] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
+    if (localStorage.getItem("username") != "alican") {
+      navigate("/login");
+    }
     baseManager.get("/products").then((data) => setProducts(data));
     setRefresh(false);
   }, [refresh]);
