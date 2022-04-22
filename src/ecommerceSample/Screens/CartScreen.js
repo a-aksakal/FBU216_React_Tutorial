@@ -5,9 +5,26 @@ import Header from "../Components/Header";
 
 function CartScreen() {
   const { cart, setCart } = useContext(CartContext);
+  const DeleteCart = (item) => {
+    var findedProduct = cart.find((x) => x.id == item.id);
+    var index = cart.indexOf(findedProduct);
+    cart.splice(index, 1);
+    setCart([...cart]);
+  };
   return (
     <>
       <Header />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-end",
+        }}
+      >
+        <div style={{ width: 50, height: 50 }}>
+          <p>Total Price</p>
+        </div>
+      </div>
       <div
         style={{
           display: "flex",
@@ -44,9 +61,11 @@ function CartScreen() {
               }}
             >
               <p style={{ fontSize: 24, color: "green", fontWeight: "800" }}>
-                {repo.unitPrice}
+                {repo.unitPrice * repo.quantity}
               </p>
-              <Button type="primary">Add</Button>
+              <Button type="primary" onClick={() => DeleteCart(repo)}>
+                Delete
+              </Button>
             </div>
           </div>
         ))}
