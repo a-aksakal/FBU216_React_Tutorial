@@ -14,9 +14,12 @@ function UrunListele() {
       navigate("/login");
     }
     baseManager.get("/products").then((data) => setProducts(data));
+
     setRefresh(false);
   }, [refresh]);
+  var filteredProducts = products.filter((item) => item.unitPrice >= 22);
 
+  console.log(filteredProducts);
   const DeleteData = (item) => {
     baseManager.del("/products/" + item.id).then((data) => console.log(data));
     setRefresh(true);

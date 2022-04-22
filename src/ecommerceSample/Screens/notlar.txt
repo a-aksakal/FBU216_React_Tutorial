@@ -1,0 +1,14 @@
+1-Dizilerde filter ve map methodu nedir ne işe yarar? 
+    -map mathodu sana yeni bir dizi üretip verileri tek tek döndürmeni sağlar. Filter mothodu da boolen bir şarta bağlı olarak uyan elementleri yeni bir dizi olarak döndürür.
+2-React'te bir componentin yaşam döngüsü nedir ? 
+    -mount,update,unmount olarak açıklanır. Component sayfaya gelir, update olur ve gider.
+3- React çalışma mantığı?
+    -Kendisine o sayfaya ait olan virtual DOM oluşturur. State'ler aracılığıyla DOM yapısında bir değişiklik olup olmadığını kontrol eder. DOM ile virtual DOm arasında bir farklılık olup olmadığını kontrol eder.
+    Eğer farklılık varsa DOM'da değişmesi gereken yerleri değiştirir, yeni bir DOM oluşturma ihtiyacı duymaz.
+4- JSX nedir? 
+    -JSX react teknolojisini kullanırken daha basit yazım için kullanmış olduğumuz bir söz dizimidir. Babel paketi aracılığı ile yazmış olduğumuz JSX kodları ES5'e göre çevirir.
+5- Componentler arası geçiş nasıl yapılır?
+    -React-Router-DOM paketi ile Routes ve Route tanımlamaları yapılarak geçiş mümkündür.
+6- Sepetimde ürünler var ve ben bu ürünlere başka componentlerde de erişmek istiyorum. Nasıl yaparım?
+    -React redux ya da ContextAPI ile yapmak mümkündür.
+
