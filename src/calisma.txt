@@ -1,1 +1,3 @@
 //Bir sayfada iki tane buton olsun + butonuna basında ekranımda sayaç 1 artacak - butonuna basınca da 1 azalacak şekilde uygulama. /uygulama1
+//Login Sayfası olsun. Kullanıcı giriş yap dediğinde sayfada giriş durumu alanı online olsun, çıkış yap dediğinde de offline olsun. Sayfa ilk yüklendiğinde offline durumu gözüksün.
+//Fetch yapısıyla northwind API'den kategorileri mapleyerek ürünleri listeleyin.

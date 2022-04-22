@@ -31,6 +31,18 @@ function ComponentMenu() {
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>
+      <Menu.SubMenu
+        key="uygulamalar"
+        title="Uygulamalar"
+        icon={<AppstoreOutlined />}
+      >
+        <Menu.Item key="a" icon={<SettingOutlined />}>
+          <Link to="/uygulama1">Sayaç Uygulaması</Link>
+        </Menu.Item>
+        <Menu.Item key="a" icon={<SettingOutlined />}>
+          <Link to="/uygulama2">Login Uygulaması</Link>
+        </Menu.Item>
+      </Menu.SubMenu>
     </Menu>
   );
 }

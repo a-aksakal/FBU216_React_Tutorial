@@ -21,6 +21,8 @@ import HomeScreen from "./ecommerceSample/Screens/HomeScreen";
 import { CartProvider } from "./store/CartContext";
 import CartScreen from "./ecommerceSample/Screens/CartScreen";
 import Login from "./ecommerceSample/Screens/Login";
+import Counter from "./homeworkSample/Counter";
+import LoginCheck from "./homeworkSample/LoginCheck";
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
             <Route path="/urunlistele" element={<UrunListele />}></Route>
             <Route path="/sepetim" element={<CartScreen />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/uygulama1" element={<Counter />}></Route>
+            <Route path="/uygulama2" element={<LoginCheck />}></Route>
           </Routes>
         </CartProvider>
       </div>
