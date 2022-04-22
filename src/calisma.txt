@@ -1,0 +1,1 @@
+//Bir sayfada iki tane buton olsun + butonuna basında ekranımda sayaç 1 artacak - butonuna basınca da 1 azalacak şekilde uygulama. /uygulama1

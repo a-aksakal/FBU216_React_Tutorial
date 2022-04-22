@@ -45,7 +45,7 @@ function Login() {
         </div>
         <div>
           <span>Password:</span>
-          <input type="text" id="password" />
+          <input type="password" id="password" />
         </div>
         <div
           style={{
