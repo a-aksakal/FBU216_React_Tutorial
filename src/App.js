@@ -23,6 +23,8 @@ import CartScreen from "./ecommerceSample/Screens/CartScreen";
 import Login from "./ecommerceSample/Screens/Login";
 import Counter from "./homeworkSample/Counter";
 import LoginCheck from "./homeworkSample/LoginCheck";
+import Car from "./propsSample/Car";
+import Car2 from "./propsSample/Car2";
 
 function App() {
   return (
@@ -50,6 +52,8 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/uygulama1" element={<Counter />}></Route>
             <Route path="/uygulama2" element={<LoginCheck />}></Route>
+            <Route path="/cardetail" element={<Car />}></Route>
+            <Route path="/cardetail2" element={<Car2 />}></Route>
           </Routes>
         </CartProvider>
       </div>

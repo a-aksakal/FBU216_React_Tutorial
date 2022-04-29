@@ -28,7 +28,7 @@ function HomeScreen() {
   return (
     <>
       {" "}
-      <Header cart={cart} />
+      <Header />
       <Row
         style={{
           backgroundColor: "#f0ebeb",
