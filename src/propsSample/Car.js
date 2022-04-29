@@ -4,7 +4,7 @@ import CarDetail from "./CarDetail";
 function Car() {
   const carDetail = {
     marka: "BMW",
-    model: "316i",
+    model: "320i",
     renk: "Siyah",
   };
   return <CarDetail carDetail={carDetail} />;
